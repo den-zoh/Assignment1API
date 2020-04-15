@@ -6,11 +6,11 @@ from django.db import models
 class JobOffer(models.Model):
     company_name = models.CharField(max_length=60)
     company_email = models.EmailField()
-    job_title = models.CharField()
-    job_description = models.CharField(null=True)
+    job_title = models.CharField(max_length=60)
+    job_description = models.CharField(null=True,max_length=120)
     salary = models.IntegerField()
-    city = models.CharField()
-    state = models.CharField()
+    city = models.CharField(max_length=30)
+    state = models.CharField(max_length=30)
     created_at = models.DateTimeField(auto_now=True)
     available = models.BooleanField(default=False)
 
